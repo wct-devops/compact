@@ -25,12 +25,17 @@ then
   the first time you use , put zcm-compact.sh in it,
   Each time you want to compress,you should create a new directory like \"20190913\" in this path ,
   put the list into the new directory,
-  then you can execute the  command to compress images.\n"
+  then you can execute the  command to compress images.
+  After execution,a directory will be automatically created based on the current time like \"IMAGE_1909130930\" in the \"20190913\" , 
+  and the compressed file \"images.squashfs\",\"restore_layers.sh\" will be generated in the \"IMAGE_1909130930\"."\n"
     echo -e "  For example,\n  \033[1;44msh zcm-compact.sh compact 20190913/201909.lst\033[0m\n"
     echo -e "  /zpaas/zcm/compact/"
     echo -e "      ├──── zcm-compact.sh"
     echo -e "      └──── 20190913"
-    echo -e "            └────201909.lst\n\n"
+    echo -e "            ├────201909.lst"
+    echo -e "            └────IMAGE_1909130930"
+    echo -e "                 ├─images.squashfs"
+    echo -e "                 └────restore_layers.sh\n\n"
     exit
 elif [ $mode = "extract" ]
 then
