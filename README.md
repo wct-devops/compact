@@ -26,8 +26,8 @@ zcm-compact
     /zpaas/zcm/compact/  
       ├────zcm-compact.sh    
       └────20190912    
-            ├────images.squashfs    
-            └────restore_layers.sh    
+                    ├────images.squashfs    
+                    └────restore_layers.sh    
 
 
  2.sh zcm-compact.sh compact new_directory_name/filename.lst  
