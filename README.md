@@ -37,11 +37,15 @@ zcm-compact
   第一次使用时，将zcm-compact.sh放入其中。      
   每次要压缩时，在这个目录下创建一个像“20190913”这样的新目录，并将列表文件放入新目录，   
   然后你可以执行命令来压缩镜像。   
-
+  执行后，在目录“20190913”下会根据当前时间自动创建一个目录，如“Image_1909130930”，  
+  压缩文件“images.squashfs”、“restore_layers.sh”将在“Image_1909130930”下生成。    
   例如，  
-  sh zcm-compact.sh compact 20190913/201909.lst  
+  sh zcm-compact.sh compact 20190913/201909.lst    
 
-   /zpaas/zcm/compact/  
-      ├────zcm-compact.sh  
-      └────20190913  
-            └────201909.lst  
+   /zpaas/zcm/compact/    
+      ├──── zcm-compact.sh  
+      └──── 20190913  
+                    ├────201909.lst  
+                    └────IMAGE_1909130930  
+                               ├─images.squashfs  
+                               └────restore_layers.sh      
