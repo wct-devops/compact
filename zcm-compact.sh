@@ -27,7 +27,7 @@ then
   put the list into the new directory,
   then you can execute the  command to compress images.
   After execution,a directory will be automatically created based on the current time like \"IMAGE_1909130930\" in the \"20190913\" , 
-  and the compressed file \"images.squashfs\",\"restore_layers.sh\" will be generated in the \"IMAGE_1909130930\"."\n"
+  and the compressed file \"images.squashfs\",\"restore_layers.sh\" will be generated in the \"IMAGE_1909130930\".\n"
     echo -e "  For example,\n  \033[1;44msh zcm-compact.sh compact 20190913/201909.lst\033[0m\n"
     echo -e "  /zpaas/zcm/compact/"
     echo -e "      ├──── zcm-compact.sh"
