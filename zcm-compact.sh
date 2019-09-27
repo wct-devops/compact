@@ -7,7 +7,7 @@ dir=$2
 if [ ! -n "$1" ]
 then
     echo -e "\n\n\n\033[1;44mUSAGE:\033[0m\\n\n"
-    echo -e "  1.sh zcm-compact.sh extract \033[1;44mnew_directory_name\033[0m\n"
+    echo -e "  1.restore the file to images:\n  sh zcm-compact.sh extract \033[1;44mnew_directory_name\033[0m\n"
     echo -e "  Please find a directory with enough space like \"/zpaas/zcm/compact\" as a dedicated decompression path,
   the first time you use , put zcm-compact.sh in it.
   Each time you want to extract,you should create a new directory like \"20190912\" in this path,
@@ -19,7 +19,7 @@ then
     echo -e "      └──── 20190912"
     echo -e "            ├────images.squashfs"
     echo -e "            └────restore_layers.sh\n\n"
-    echo -e "  2.sh zcm-compact.sh compact \033[1;44mnew_directory_name/filename.lst\033[0m\n"
+    echo -e "  2.compress images:\n  sh zcm-compact.sh compact \033[1;44mnew_directory_name/filename.lst\033[0m\n"
     echo -e "  Please pull the image on the machine,edit the images' names as a list ends with '.lst', such as \"201909.lst\".
   Find a directory with enough space like \"/zpaas/zcm/compact\" as a dedicated decompression path,
   the first time you use , put zcm-compact.sh in it,
