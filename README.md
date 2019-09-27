@@ -12,7 +12,8 @@ zcm-compact
 使用方法：  
 
 
-1.sh zcm-compact.sh extract new_directory_name  
+1.解压操作    
+  sh zcm-compact.sh extract new_directory_name  
 
   请找一个有足够空间的目录，如“/zpaas/zcm/compact”作为专用的解压缩路径，    
   第一次使用时，将zcm-compact.sh放入其中。   
@@ -30,7 +31,8 @@ zcm-compact
                     └────restore_layers.sh    
 
 
- 2.sh zcm-compact.sh compact new_directory_name/filename.lst  
+ 2.压缩操作  
+  sh zcm-compact.sh compact new_directory_name/filename.lst  
   
   请先将镜像拉到本地，编辑镜像名形成一个列表保存为文件，以“.lst”为后缀名，例如“201909.lst”。    
   找一个有足够空间的目录，比如“/zpaas/zcm/compact”，作为专用的解压缩路径，    
