@@ -51,7 +51,7 @@ then
     requirespace=$((7*filesize))   
     if ((${freespace} < ${requirespace})) 
     then
-        echo "$workdir has no enough space for extract!!!"
+        echo "$workdir has no enough space for extract!!!,the dir must have $requirespace M free space"
         exit
     fi
     order="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v ${workdir}:/root/run zcm-compact extract"
