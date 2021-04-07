@@ -1,0 +1,4 @@
+dest_harbor_ip=10.0.0.1:52800
+dest_harbor_project=zcm9
+dest_harbor_username=admin
+dest_harbor_password=password

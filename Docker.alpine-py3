@@ -1,0 +1,31 @@
+FROM 10.45.80.1/public/golang:1.15-alpine3.12 as builder
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
+  && apk add git \
+     -U tzdata \
+     docker \
+  && go get gitee.com/wangr0031/tar-split/cmd/tar-split
+
+
+FROM python:3.7.9-alpine3.12
+
+ENV PYTHONIOENCODING=UTF-8
+ENV PROJECT_DIR=/root/app
+WORKDIR $PROJECT_DIR
+
+COPY --from=builder /go/bin/tar-split /root
+COPY --from=builder /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+COPY --from=builder /usr/bin/docker /usr/bin/docker
+
+#COPY XX /root/
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
+    && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
+    && apk add --no-cache --virtual .build-deps \
+        docker \
+        -U tzdata \
+    && cp /usr/bin/docker /usr/bin/docker.bak \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apk del --no-network .build-deps \
+    && mv /usr/bin/docker.bak /usr/bin/docker \
+    && rm -rf /var/cache/apk/* \
+    && find /usr/ -name "*.pyc" -delete
