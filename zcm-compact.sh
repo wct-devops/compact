@@ -76,3 +76,4 @@ then
 else
     echo -e "\nUnexpected command,you can execute '\033[1;44msh zcm-compact.sh\033[0m' to learn how to use this script.\n"
 fi
+
